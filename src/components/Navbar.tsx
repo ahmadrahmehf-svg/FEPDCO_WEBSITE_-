@@ -44,6 +44,10 @@ export default function Navbar() {
               className="h-full w-full object-contain"
             />
           </div>
+          <div className="hidden md:block">
+            <span className="text-base font-bold text-white tracking-wide">FUTURE ENERGY</span>
+            <span className="block text-[10px] tracking-[0.2em] text-green/80 uppercase">Projects Development Co.</span>
+          </div>
         </a>
 
         {/* Desktop Links */}
