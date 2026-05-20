@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import { CheckCircle } from 'lucide-react';
 
+const baseUrl = import.meta.env.BASE_URL;
+
 const highlights = [
   'Jordanian-American company associated with US Based "Gaffney-Kroese" corporation',
   'Various partnerships with Spanish companies of significant importance',
@@ -29,7 +31,7 @@ export default function About() {
           >
             <div className="relative rounded-2xl overflow-hidden">
               <img
-                src="/images/about-bg.jpg"
+                src={`${baseUrl}images/about-bg.jpg`}
                 alt="Energy consulting team"
                 className="w-full h-[500px] object-cover"
               />

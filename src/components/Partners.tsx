@@ -1,21 +1,23 @@
 import { motion } from 'framer-motion';
 
+const baseUrl = import.meta.env.BASE_URL;
+
 const partners = [
-  { name: 'Shell', logo: '/images/business-partners/shell.jpg' },
-  { name: 'OHL Group', logo: '/images/business-partners/ohl.png' },
-  { name: 'SENER', logo: '/images/business-partners/sener.png' },
-  { name: 'Ingeteam', logo: '/images/business-partners/ingeteam.jpg' },
-  { name: 'Baker Hughes', logo: '/images/business-partners/baker.png' },
-  { name: 'Gaffney-Kroese', logo: '/images/business-partners/gk.jpg' },
-  { name: 'Sofcon', logo: '/images/business-partners/sofcon.png' },
-  { name: 'Suris', logo: '/images/business-partners/suris.jpg' },
-  { name: 'Alten Energías Renovables', logo: '/images/business-partners/alten.png' },
-  { name: 'AEC', logo: '/images/business-partners/aec.png' },
-  { name: 'Aqaba Development Corp', logo: '/images/business-partners/aqaba.png' },
-  { name: 'GRS', logo: '/images/business-partners/grs.png' },
-  { name: 'Building Energy', logo: '/images/business-partners/be.jpg' },
-  { name: 'Energy D', logo: '/images/business-partners/energy.png' },
-  { name: 'Waha Oil Company', logo: '/images/business-partners/w3.jpg' },
+  { name: 'Shell', logo: `${baseUrl}images/business-partners/shell.jpg` },
+  { name: 'OHL Group', logo: `${baseUrl}images/business-partners/ohl.png` },
+  { name: 'SENER', logo: `${baseUrl}images/business-partners/sener.png` },
+  { name: 'Ingeteam', logo: `${baseUrl}images/business-partners/ingeteam.jpg` },
+  { name: 'Baker Hughes', logo: `${baseUrl}images/business-partners/baker.png` },
+  { name: 'Gaffney-Kroese', logo: `${baseUrl}images/business-partners/gk.jpg` },
+  { name: 'Sofcon', logo: `${baseUrl}images/business-partners/sofcon.png` },
+  { name: 'Suris', logo: `${baseUrl}images/business-partners/suris.jpg` },
+  { name: 'Alten Energías Renovables', logo: `${baseUrl}images/business-partners/alten.png` },
+  { name: 'AEC', logo: `${baseUrl}images/business-partners/aec.png` },
+  { name: 'Aqaba Development Corp', logo: `${baseUrl}images/business-partners/aqaba.png` },
+  { name: 'GRS', logo: `${baseUrl}images/business-partners/grs.png` },
+  { name: 'Building Energy', logo: `${baseUrl}images/business-partners/be.jpg` },
+  { name: 'Energy D', logo: `${baseUrl}images/business-partners/energy.png` },
+  { name: 'Waha Oil Company', logo: `${baseUrl}images/business-partners/w3.jpg` },
 ];
 
 export default function Partners() {

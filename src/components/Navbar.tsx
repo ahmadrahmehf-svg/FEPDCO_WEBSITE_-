@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
+const baseUrl = import.meta.env.BASE_URL;
+
 const navLinks = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
@@ -37,7 +39,7 @@ export default function Navbar() {
         <a href="#home" className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full overflow-hidden bg-white/10 flex items-center justify-center">
             <img
-              src="/images/FEPDCO logo.png"
+              src={`${baseUrl}images/FEPDCO logo.png`}
               alt="Future Energy logo"
               className="h-full w-full object-contain"
             />

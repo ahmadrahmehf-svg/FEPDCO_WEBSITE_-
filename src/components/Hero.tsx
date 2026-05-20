@@ -2,13 +2,15 @@ import { motion } from 'framer-motion';
 import { ArrowDown, Zap } from 'lucide-react';
 import ParticleCanvas from './ParticleCanvas';
 
+const baseUrl = import.meta.env.BASE_URL;
+
 export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src="/images/hero-bg.jpg"
+          src={`${baseUrl}images/hero-bg.jpg`}
           alt="Solar panels in desert"
           className="w-full h-full object-cover"
         />

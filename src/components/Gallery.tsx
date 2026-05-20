@@ -1,18 +1,20 @@
 import { motion } from 'framer-motion';
 
+const baseUrl = import.meta.env.BASE_URL;
+
 const images = [
   {
-    src: '/images/hero-bg.jpg',
+    src: `${baseUrl}images/hero-bg.jpg`,
     title: 'Solar Farms',
     subtitle: 'PV Solar Power Plants',
   },
   {
-    src: '/images/wind-farm.jpg',
+    src: `${baseUrl}images/wind-farm.jpg`,
     title: 'Wind Energy',
     subtitle: 'Wind Power Development',
   },
   {
-    src: '/images/oil-gas.jpg',
+    src: `${baseUrl}images/oil-gas.jpg`,
     title: 'Oil & Gas',
     subtitle: 'Industrial Infrastructure',
   },
