@@ -35,23 +35,24 @@ export default function Navbar() {
           : 'bg-transparent'
       }`}
     >
-     <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between bg-slate-900"> {/* Added dark background for testing */}
-  <a href="#home" className="flex items-center gap-3">
-    <div className="w-10 h-10 rounded-full overflow-hidden bg-transparent flex items-center justify-center">
-      <img
-        src={`${baseUrl}images/FEPDCO-logo.png`}
-        alt="Future Energy logo"
-        className="h-full w-full object-contain"
-      />
-    </div>
-    {/* Removed 'hidden md:block' so it shows on all screens */}
-    <div className="block">
-      <span className="text-base font-bold text-white tracking-wide block">FUTURE ENERGY</span>
-      {/* Changed to standard green-400 with 80% opacity */}
-      <span className="block text-[10px] tracking-[0.2em] text-green-400/80 uppercase">Projects Development Co.</span>
-    </div>
-  </a>
-</div>
+      {/* Main Container Wrapper */}
+      <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
+        
+        {/* Brand Logo and Name */}
+        <a href="#home" className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-full overflow-hidden bg-transparent flex items-center justify-center">
+            <img
+              src={`${baseUrl}images/FEPDCO-logo.png`}
+              alt="Future Energy logo"
+              className="h-full w-full object-contain"
+            />
+          </div>
+          <div className="block">
+            <span className="text-base font-bold text-white tracking-wide block">FUTURE ENERGY</span>
+            <span className="block text-[10px] tracking-[0.2em] text-green-400/80 uppercase">Projects Development Co.</span>
+          </div>
+        </a>
+
         {/* Desktop Links */}
         <div className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
@@ -75,11 +76,12 @@ export default function Navbar() {
         {/* Mobile Toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden text-white p-2"
+          className="lg:hidden text-white p-2 focus:outline-none"
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
-      </div>
+
+      </div> {/* Closes the max-w-7xl container perfectly */}
 
       {/* Mobile Menu */}
       <AnimatePresence>
