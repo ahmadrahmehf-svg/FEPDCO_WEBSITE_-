@@ -37,16 +37,12 @@ export default function Navbar() {
     >
       <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
         <a href="#home" className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full overflow-hidden bg-white/10 flex items-center justify-center">
+          <div className="w-10 h-10 rounded-full overflow-hidden bg-transparent flex items-center justify-center">
             <img
-              src={`${baseUrl}images/FEPDCO logo.png`}
+              src={`${baseUrl}images/FEPDCO-logo.png`}
               alt="Future Energy logo"
               className="h-full w-full object-contain"
             />
-          </div>
-          <div>
-            <span className="text-base font-bold text-white tracking-wide">FUTURE ENERGY</span>
-            <span className="block text-[10px] tracking-[0.2em] text-green/80 uppercase">Projects Development Co.</span>
           </div>
         </a>
 
