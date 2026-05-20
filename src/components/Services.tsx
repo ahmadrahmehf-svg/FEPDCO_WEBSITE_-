@@ -10,6 +10,8 @@ import {
   Plug,
 } from 'lucide-react';
 
+const baseUrl = import.meta.env.BASE_URL;
+
 const services = [
   {
     icon: Lightbulb,
@@ -90,7 +92,7 @@ export default function Services() {
         >
           <span className="text-green text-sm font-semibold tracking-[0.2em] uppercase">What We Do</span>
           <h2 className="text-4xl md:text-5xl font-bold text-white mt-3 mb-4">
-            Electrical Power <span className="gradient-text font-caveat text-5xl md:text-6xl">Energy Services</span>
+            Electrical Power <span className="gradient-text font-caveat text-5xl md:text-6xl inline-block pr-2">Energy Services</span>
           </h2>
           <p className="max-w-3xl mx-auto text-white/50 text-lg">
             We focus on providing solutions in energy efficiency and emission level control for generation operations
@@ -119,7 +121,7 @@ export default function Services() {
           ))}
         </div>
 
-        {/* Business Model */}
+        {/* Business Model Heading Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -128,10 +130,14 @@ export default function Services() {
         >
           <span className="text-green text-sm font-semibold tracking-[0.2em] uppercase">How We Work</span>
           <h2 className="text-3xl md:text-4xl font-bold text-white mt-3">
-            Business <span className="gradient-text font-caveat text-4xl md:text-5xl">Model </span>
+            Business{' '}
+            <span className="gradient-text font-caveat text-4xl md:text-5xl inline-block pr-3">
+              Model
+            </span>
           </h2>
         </motion.div>
 
+        {/* Business Model Cards Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {businessModel.map((bm, i) => (
             <motion.div
