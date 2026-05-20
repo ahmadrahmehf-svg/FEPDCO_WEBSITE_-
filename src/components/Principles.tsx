@@ -30,8 +30,8 @@ const principles = [
 
 export default function Principles() {
   return (
-    <section id="principles" className="relative py-28 bg-navy/50">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="principles" aria-labelledby="principles-heading" className="relative py-16 sm:py-20 md:py-28 bg-navy/50">
+      <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -39,12 +39,12 @@ export default function Principles() {
           className="text-center mb-16"
         >
           <span className="text-green text-sm font-semibold tracking-[0.2em] uppercase">Our Values</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mt-3">
+          <h2 id="principles-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-3">
             Guiding <span className="gradient-text font-caveat text-5xl md:text-6xl">Principles</span>
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {principles.map((p, i) => (
             <motion.div
               key={p.title}

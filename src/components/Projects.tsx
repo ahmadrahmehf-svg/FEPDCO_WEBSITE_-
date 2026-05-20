@@ -184,8 +184,8 @@ export default function Projects() {
   const filtered = active === 'all' ? projects : projects.filter((p) => p.category === active);
 
   return (
-    <section id="projects" className="relative py-28 bg-navy/40">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="projects" aria-labelledby="projects-heading" className="relative py-16 sm:py-20 md:py-28 bg-navy/40">
+      <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -193,7 +193,7 @@ export default function Projects() {
           className="text-center mb-12"
         >
           <span className="text-green text-sm font-semibold tracking-[0.2em] uppercase">Our Portfolio</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mt-3 mb-4">
+          <h2 id="projects-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-3 mb-4">
             Featured <span className="gradient-text font-caveat text-5xl md:text-6xl">Projects</span>
           </h2>
           <p className="max-w-2xl mx-auto text-white/50 text-lg">
@@ -203,12 +203,19 @@ export default function Projects() {
         </motion.div>
 
         {/* Tabs */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        <div
+          role="tablist"
+          aria-label="Filter projects by category"
+          className="flex flex-nowrap sm:flex-wrap justify-start sm:justify-center gap-2 sm:gap-3 mb-8 sm:mb-12 overflow-x-auto scrollbar-hide pb-2 -mx-1 px-1"
+        >
           {tabs.map((tab) => (
             <button
               key={tab.key}
+              type="button"
+              role="tab"
+              aria-selected={active === tab.key}
               onClick={() => setActive(tab.key)}
-              className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
+              className={`shrink-0 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 ${
                 active === tab.key
                   ? 'bg-gradient-to-r from-green to-mint text-navy-dark'
                   : 'glass text-white/60 hover:text-white hover:border-green/30'
@@ -220,7 +227,7 @@ export default function Projects() {
         </div>
 
         {/* Projects Grid */}
-        <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           <AnimatePresence mode="popLayout">
             {filtered.map((project) => (
               <motion.div

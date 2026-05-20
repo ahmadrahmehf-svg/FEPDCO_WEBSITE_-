@@ -22,9 +22,9 @@ const images = [
 
 export default function Gallery() {
   return (
-    <section className="relative py-20">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-3 gap-6">
+    <section aria-label="Energy project gallery" className="relative py-12 sm:py-16 md:py-20">
+      <div className="section-container">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
           {images.map((img, i) => (
             <motion.div
               key={img.title}
@@ -32,11 +32,12 @@ export default function Gallery() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15 }}
-              className="group relative rounded-2xl overflow-hidden h-[300px]"
+              className="group relative rounded-2xl overflow-hidden h-[220px] sm:h-[260px] md:h-[300px]"
             >
               <img
                 src={img.src}
-                alt={img.title}
+                alt={`${img.title} — ${img.subtitle} by FEPDCO`}
+                loading="lazy"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy-dark via-navy-dark/30 to-transparent" />

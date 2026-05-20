@@ -80,10 +80,10 @@ const businessModel = [
 
 export default function Services() {
   return (
-    <section id="services" className="relative py-28">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-teal/5 blur-[150px]" />
+    <section id="services" aria-labelledby="services-heading" className="relative py-16 sm:py-20 md:py-28">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[600px] h-[300px] sm:h-[600px] rounded-full bg-teal/5 blur-[150px]" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="section-container relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -91,17 +91,17 @@ export default function Services() {
           className="text-center mb-16"
         >
           <span className="text-green text-sm font-semibold tracking-[0.2em] uppercase">What We Do</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mt-3 mb-4">
-            Electrical Power <span className="gradient-text font-caveat text-5xl md:text-6xl inline-block pr-2">Energy Services</span>
+          <h2 id="services-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-3 mb-4 break-words">
+            Electrical Power <span className="gradient-text font-caveat text-4xl sm:text-5xl md:text-6xl inline-block pr-2">Energy Services</span>
           </h2>
-          <p className="max-w-3xl mx-auto text-white/50 text-lg">
+          <p className="max-w-3xl mx-auto text-white/50 text-base sm:text-lg">
             We focus on providing solutions in energy efficiency and emission level control for generation operations
             by the implementation of the latest technology available for power plants.
           </p>
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-16 sm:mb-24">
           {services.map((s, i) => (
             <motion.div
               key={s.title}
@@ -138,7 +138,7 @@ export default function Services() {
         </motion.div>
 
         {/* Business Model Cards Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {businessModel.map((bm, i) => (
             <motion.div
               key={bm.title}

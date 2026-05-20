@@ -38,7 +38,7 @@ function Counter({ target, suffix, prefix }: { target: number; suffix: string; p
   }, [target]);
 
   return (
-    <div ref={ref} className="text-4xl md:text-5xl font-bold text-mint">
+    <div ref={ref} className="text-3xl sm:text-4xl md:text-5xl font-bold text-mint">
       {prefix}{count}{suffix}
     </div>
   );
@@ -46,9 +46,9 @@ function Counter({ target, suffix, prefix }: { target: number; suffix: string; p
 
 export default function Stats() {
   return (
-    <section className="relative py-20 bg-teal-dark/50">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+    <section className="relative py-12 sm:py-16 md:py-20 bg-teal-dark/50" aria-label="Company statistics">
+      <div className="section-container">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}
@@ -62,7 +62,7 @@ export default function Stats() {
                 <stat.icon size={24} className="text-green" />
               </div>
               <Counter target={stat.value} suffix={stat.suffix} prefix={stat.prefix} />
-              <p className="mt-2 text-white/50 text-sm">{stat.label}</p>
+              <p className="mt-2 text-white/50 text-xs sm:text-sm leading-snug px-1">{stat.label}</p>
             </motion.div>
           ))}
         </div>

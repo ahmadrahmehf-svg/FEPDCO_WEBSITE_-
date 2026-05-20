@@ -6,12 +6,13 @@ const baseUrl = import.meta.env.BASE_URL;
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" aria-label="Home" className="relative min-h-[100dvh] min-h-screen flex items-center justify-center overflow-hidden pt-20 sm:pt-0">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
           src={`${baseUrl}images/hero-bg.jpg`}
-          alt="Solar panels in desert"
+          alt="Large-scale solar photovoltaic power plant in the desert — renewable energy infrastructure"
+          fetchPriority="high"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-navy-dark/80 via-navy-dark/70 to-navy-dark" />
@@ -30,7 +31,7 @@ export default function Hero() {
       />
 
       {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
+      <div className="relative z-10 w-full max-w-6xl mx-auto section-container text-center pb-24 sm:pb-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -45,20 +46,20 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] mb-6"
+          className="text-[2.25rem] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[0.95] mb-4 sm:mb-6 break-words"
         >
           <span className="text-white">FUTURE</span>
           <br />
-          <span className="gradient-text font-caveat text-6xl md:text-8xl lg:text-9xl">Energy</span>
+          <span className="gradient-text font-caveat text-5xl sm:text-6xl md:text-8xl lg:text-9xl">Energy</span>
           <br />
-          <span className="text-white/90 text-4xl md:text-5xl lg:text-6xl font-light tracking-wide">PROJECTS</span>
+          <span className="text-white/90 text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-wide">PROJECTS</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
-          className="max-w-2xl mx-auto text-lg md:text-xl text-white/60 leading-relaxed mb-10"
+          className="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-white/60 leading-relaxed mb-8 sm:mb-10 px-1"
         >
           Independent energy consulting, services & contracting company providing
           world-class solutions to international developers and EPCs across Jordan & the Middle East.
@@ -68,17 +69,17 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto max-w-sm sm:max-w-none mx-auto"
         >
           <a
             href="#services"
-            className="px-8 py-4 rounded-full bg-gradient-to-r from-green to-mint text-navy-dark font-bold text-lg hover:shadow-2xl hover:shadow-green/30 transition-all duration-300 hover:scale-105"
+            className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-green to-mint text-navy-dark font-bold text-base sm:text-lg hover:shadow-2xl hover:shadow-green/30 transition-all duration-300 hover:scale-105 text-center"
           >
             Our Services
           </a>
           <a
             href="#projects"
-            className="px-8 py-4 rounded-full border border-green/30 text-white hover:bg-green/10 hover:border-green/50 font-medium transition-all duration-300"
+            className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-full border border-green/30 text-white hover:bg-green/10 hover:border-green/50 font-medium transition-all duration-300 text-center"
           >
             View Projects
           </a>
@@ -89,7 +90,8 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2"
+          className="hidden sm:block absolute bottom-8 md:bottom-10 left-1/2 -translate-x-1/2"
+          aria-hidden="true"
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}

@@ -3,10 +3,10 @@ import { Zap } from 'lucide-react';
 export default function Footer() {
   return (
     <footer className="relative border-t border-green/10 bg-navy-dark/80">
-      <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="grid md:grid-cols-3 gap-8 items-center">
+      <div className="section-container py-10 sm:py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center md:text-left">
           {/* Logo */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 justify-center md:justify-start">
             <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-green to-mint flex items-center justify-center">
               <Zap size={20} className="text-navy-dark" />
             </div>
@@ -26,7 +26,7 @@ export default function Footer() {
           </div>
 
           {/* Copyright */}
-          <div className="text-right">
+          <div className="text-center md:text-right">
             <p className="text-sm text-white/30">
               © {new Date().getFullYear()} Future Energy Projects Development Co.
             </p>

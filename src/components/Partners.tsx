@@ -22,10 +22,10 @@ const partners = [
 
 export default function Partners() {
   return (
-    <section id="partners" className="relative py-28">
+    <section id="partners" aria-labelledby="partners-heading" className="relative py-16 sm:py-20 md:py-28">
       <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-green/20 to-transparent" />
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -33,7 +33,7 @@ export default function Partners() {
           className="text-center mb-16"
         >
           <span className="text-green text-sm font-semibold tracking-[0.2em] uppercase">Trusted By</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mt-3 mb-4">
+          <h2 id="partners-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-3 mb-4">
             Business <span className="gradient-text font-caveat text-5xl md:text-6xl">Partners</span>
           </h2>
           <p className="max-w-2xl mx-auto text-white/50 text-lg">
@@ -41,7 +41,7 @@ export default function Partners() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4 md:gap-6">
           {partners.map((partner, i) => (
             <motion.div
               key={partner.name}
@@ -50,12 +50,13 @@ export default function Partners() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.05, duration: 0.4 }}
               whileHover={{ y: -4, scale: 1.03 }}
-              className="glass rounded-3xl p-6 flex items-center justify-center transition-all duration-300 min-h-[120px] group"
+              className="glass rounded-2xl sm:rounded-3xl p-4 sm:p-6 flex items-center justify-center transition-all duration-300 min-h-[90px] sm:min-h-[120px] group"
             >
               <img
                 src={partner.logo}
-                alt={partner.name}
-                className="max-h-16 w-auto object-contain opacity-80 transition-opacity duration-300 group-hover:opacity-100"
+                alt={`${partner.name} — FEPDCO business partner logo`}
+                loading="lazy"
+                className="max-h-12 sm:max-h-16 w-auto max-w-full object-contain opacity-80 transition-opacity duration-300 group-hover:opacity-100"
                 onError={(e) => {
                   (e.target as HTMLImageElement).style.display = 'none';
                 }}

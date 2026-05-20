@@ -36,20 +36,22 @@ export default function Navbar() {
       }`}
     >
       {/* Main Container Wrapper */}
-      <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
+      <div className="section-container py-3 sm:py-4 flex items-center justify-between gap-2">
         
         {/* Brand Logo and Name */}
-        <a href="#home" className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full overflow-hidden bg-transparent flex items-center justify-center">
+        <a href="#home" className="flex items-center gap-2 sm:gap-3 min-w-0 shrink">
+          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden bg-transparent flex items-center justify-center shrink-0">
             <img
               src={`${baseUrl}images/FEPDCO-logo.png`}
-              alt="Future Energy logo"
+              alt="FEPDCO — Future Energy Projects Development Co. logo"
+              width={40}
+              height={40}
               className="h-full w-full object-contain"
             />
           </div>
-          <div className="block">
-            <span className="text-base font-bold text-white tracking-wide block">FUTURE ENERGY</span>
-            <span className="block text-[10px] tracking-[0.2em] text-green-400/80 uppercase">Projects Development Co.</span>
+          <div className="min-w-0">
+            <span className="text-sm sm:text-base font-bold text-white tracking-wide block truncate">FUTURE ENERGY</span>
+            <span className="hidden sm:block text-[10px] tracking-[0.15em] sm:tracking-[0.2em] text-green-400/80 uppercase truncate">Projects Development Co.</span>
           </div>
         </a>
 
@@ -75,8 +77,12 @@ export default function Navbar() {
 
         {/* Mobile Toggle */}
         <button
+          type="button"
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden text-white p-2 focus:outline-none"
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-nav-menu"
+          aria-label={mobileOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          className="lg:hidden text-white p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-green rounded-lg"
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -90,9 +96,10 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
+            id="mobile-nav-menu"
             className="lg:hidden bg-navy-dark/95 backdrop-blur-xl border-t border-green/10"
           >
-            <div className="px-6 py-6 flex flex-col gap-4">
+            <div className="section-container py-6 flex flex-col gap-4">
               {navLinks.map((link) => (
                 <a
                   key={link.href}

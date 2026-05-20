@@ -14,13 +14,13 @@ const highlights = [
 
 export default function About() {
   return (
-    <section id="about" className="relative py-28 overflow-hidden">
+    <section id="about" aria-labelledby="about-heading" className="relative py-16 sm:py-20 md:py-28 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-green/5 blur-[120px]" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-teal/10 blur-[100px]" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="section-container relative z-10">
+        <div className="grid lg:grid-cols-2 gap-10 md:gap-16 items-center">
           {/* Image Side */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -32,8 +32,9 @@ export default function About() {
             <div className="relative rounded-2xl overflow-hidden">
               <img
                 src={`${baseUrl}images/about-bg.jpg`}
-                alt="Energy consulting team"
-                className="w-full h-[500px] object-cover"
+                alt="FEPDCO energy engineering and consulting professionals at a power project site"
+                loading="lazy"
+                className="w-full h-[280px] sm:h-[360px] md:h-[450px] lg:h-[500px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/80 via-transparent to-transparent" />
             </div>
@@ -41,7 +42,7 @@ export default function About() {
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 4, repeat: Infinity }}
-              className="absolute -bottom-6 -right-6 glass rounded-xl p-6 max-w-[220px]"
+              className="absolute -bottom-4 right-4 sm:-bottom-6 sm:-right-6 glass rounded-xl p-4 sm:p-6 max-w-[180px] sm:max-w-[220px]"
             >
               <div className="text-3xl font-bold text-mint font-caveat">Since 2007</div>
               <p className="text-white/50 text-sm mt-1">Amman, Jordan</p>
@@ -56,7 +57,7 @@ export default function About() {
             transition={{ duration: 0.8 }}
           >
             <span className="text-green text-sm font-semibold tracking-[0.2em] uppercase">About Us</span>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mt-3 mb-6 leading-tight">
+            <h2 id="about-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-3 mb-4 sm:mb-6 leading-tight">
               Independent Energy
               <span className="gradient-text font-caveat text-5xl md:text-6xl block">Consulting Excellence</span>
             </h2>

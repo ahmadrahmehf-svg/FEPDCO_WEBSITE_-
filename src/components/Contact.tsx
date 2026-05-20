@@ -12,10 +12,10 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-28 bg-navy/40">
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-green/5 blur-[150px]" />
+    <section id="contact" aria-labelledby="contact-heading" className="relative py-16 sm:py-20 md:py-28 bg-navy/40">
+      <div className="absolute bottom-0 right-0 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] rounded-full bg-green/5 blur-[150px]" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="section-container relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -23,7 +23,7 @@ export default function Contact() {
           className="text-center mb-16"
         >
           <span className="text-green text-sm font-semibold tracking-[0.2em] uppercase">Get in Touch</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mt-3 mb-4">
+          <h2 id="contact-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-3 mb-4">
             Contact <span className="gradient-text font-caveat text-5xl md:text-6xl">Us</span>
           </h2>
           <p className="max-w-2xl mx-auto text-white/50 text-lg">
@@ -31,7 +31,7 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-5 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -46,7 +46,9 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-white font-semibold mb-1">Location</h4>
-                  <p className="text-white/50 text-sm">Amman, Jordan<br />P.O. Box 2801, 11941</p>
+                  <address className="text-white/50 text-sm not-italic">
+                    Amman, Jordan<br />P.O. Box 2801, 11941
+                  </address>
                 </div>
               </div>
             </div>
@@ -58,7 +60,9 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-white font-semibold mb-1">Phone</h4>
-                  <p className="text-white/50 text-sm">+962-6-5350103</p>
+                  <p className="text-white/50 text-sm">
+                    <a href="tel:+96265350103" className="hover:text-mint transition-colors">+962-6-5350103</a>
+                  </p>
                   <p className="text-white/50 text-sm">Fax: +962-6-5350107</p>
                 </div>
               </div>
@@ -71,8 +75,12 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-white font-semibold mb-1">Email</h4>
-                  <p className="text-white/50 text-sm">info@future-jordan.com</p>
-                  <p className="text-white/50 text-sm">www.future-jordan.com</p>
+                  <p className="text-white/50 text-sm">
+                    <a href="mailto:info@future-jordan.com" className="hover:text-mint transition-colors break-all">info@future-jordan.com</a>
+                  </p>
+                  <p className="text-white/50 text-sm">
+                    <a href="https://www.future-jordan.com" rel="noopener noreferrer" className="hover:text-mint transition-colors">www.future-jordan.com</a>
+                  </p>
                 </div>
               </div>
             </div>
@@ -85,7 +93,7 @@ export default function Contact() {
             viewport={{ once: true }}
             className="lg:col-span-3"
           >
-            <form onSubmit={handleSubmit} className="glass rounded-2xl p-8 space-y-6">
+            <form onSubmit={handleSubmit} className="glass rounded-2xl p-5 sm:p-8 space-y-5 sm:space-y-6" noValidate>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-white/60 text-sm mb-2">Full Name</label>

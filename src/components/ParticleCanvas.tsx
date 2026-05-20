@@ -19,8 +19,9 @@ export default function ParticleCanvas() {
 
     let animId: number;
     const particles: Particle[] = [];
-    const count = 60;
-    const connectDist = 150;
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    const count = isMobile ? 25 : 60;
+    const connectDist = isMobile ? 100 : 150;
 
     const resize = () => {
       canvas.width = window.innerWidth;
@@ -85,7 +86,8 @@ export default function ParticleCanvas() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 z-[1] pointer-events-none"
+      aria-hidden="true"
+      className="absolute inset-0 z-[1] pointer-events-none hidden sm:block"
     />
   );
 }
