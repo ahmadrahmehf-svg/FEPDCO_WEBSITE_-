@@ -128,7 +128,7 @@ export default function Services() {
         >
           <span className="text-green text-sm font-semibold tracking-[0.2em] uppercase">How We Work</span>
           <h2 className="text-3xl md:text-4xl font-bold text-white mt-3">
-            Business <span className="gradient-text font-caveat text-4xl md:text-5xl">Model</span>
+            Business <span className="gradient-text font-caveat text-4xl md:text-5xl">Model </span>
           </h2>
         </motion.div>
 
